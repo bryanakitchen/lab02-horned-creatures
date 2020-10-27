@@ -1,10 +1,15 @@
 import React from 'react';
+import './App.css';
+// import images from './Data.js';
+import Header from './Header';
+import ImageList from './ImageList';
 
 export default class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>The World of Horned Creatures</h1>
+        <Header />
+        <ImageList />
       </div>
     )
   }
