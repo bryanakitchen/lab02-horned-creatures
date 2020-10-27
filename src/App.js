@@ -1,52 +1,20 @@
 import React from 'react';
 import './App.css';
-// import images from './Data.js';
+import images from './Data.js';
 import Header from './Header';
 import ImageList from './ImageList';
 
 export default class App extends React.Component {
+
   render() {
     return (
       <div>
         <Header />
-        <ImageList />
+        <ImageList imagesProp={images} />
       </div>
     )
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
+// line 13, imageProp, comes from ImageList.js, line 22.
+// and {images} comes from our imported data. 

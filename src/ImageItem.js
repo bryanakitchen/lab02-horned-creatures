@@ -1,5 +1,4 @@
 import React from 'react';
-import images from './Data.js';
 
 // THIS IS A TEMPLATE - Presentational Component
 // Styling goes here
