@@ -9,6 +9,7 @@ export default class ImageList extends React.Component {
     state = {
         filter: '',
         horns: '',
+        cool: '',
     }
 
     handleChange = e => {
@@ -23,28 +24,18 @@ export default class ImageList extends React.Component {
         });
     }
 
-    render() {
+    handleChangeCool = e => {
+        this.setState({
+            cool: e.target.value,
+        });
+    }
 
-    const filteredImages = this.props.imagesProp.filter((image) => {
-      if (!this.state.filter) return true;
 
-      if (image.keyword === this.state.filter) return true;
-      
-      return false;
-    });
-
-    // const filteredImages = this.props.imagesProp.filter((image) => {
-    //     if (!this.state.filter) return true;
-  
-    //     if (image.keyword === this.state.filter) return true;
-        
-    //     return false;
-    //   });
-  
+    render() {  
 
         return (
             <>
-                <div className="drop-down-one" >
+                <div className="drop-down" >
                     <select onChange={this.handleChange}>
                         <option value=''>Show All Types</option>
                         <option value='narwhal'>Narwhal</option>
@@ -59,8 +50,7 @@ export default class ImageList extends React.Component {
                         <option value='lizard'>Lizard</option>
                         <option value='dragon'>Dragon</option>
                     </select>
-                </div>
-                <div className="drop-down-one" >
+
                     <select onChange={this.handleChangeHorns}>
                         <option value=''>Show All Horns</option>
                         <option value='1'>1</option>
@@ -68,11 +58,38 @@ export default class ImageList extends React.Component {
                         <option value='3'>3</option>
                         <option value='100'>100</option>
                     </select>
-                </div>
 
+                    <select onChange={this.handleChangeCool}>
+                        <option value=''>Cool Factor</option>
+                        <option value='Fair'>Fair</option>
+                        <option value='Cool'>Cool</option>
+                        <option value='Super Cool'>Super Cool</option>
+                        <option value='MagiCool'>MagiCool</option>
+                    </select>
+
+                </div>
                 <div className="whole-group">
-                    {filteredImages.map(image => {
-                        return <ImageItem title={image.title} url={image.url} description={image.description} horns={image.horns} keyword={image.keyword} />
+                    {
+                        this.props.imagesProp.filter((image) => {
+                            if (!this.state.filter) return true;
+                            if (image.keyword === this.state.filter) return true;
+                            return false;
+                          })
+
+                        .filter((image) => {
+                            if (!this.state.horns) return true;
+                            if (image.horns === +this.state.horns) return true;
+                            return false;
+                          })
+
+                        .filter((image) => {
+                            if (!this.state.cool) return true;
+                            if (image.cool === this.state.cool) return true;
+                            return false;
+                          })
+                    
+                        .map(image => {
+                        return <ImageItem title={image.title} url={image.url} description={image.description} horns={image.horns} keyword={image.keyword} cool={image.cool} />
                     })}
                 </div>
             </>
