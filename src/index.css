@@ -5,9 +5,73 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.drop-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.whole-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.each-unit {
+  border: 1px solid black;
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(228, 237, 238);
+
+}
+
+.images {
+  width: 200px;
+
+}
+
+.description {
+  margin: 30px;
+}
+
+.description {
+  margin: 10px 30px 10px 30px;
+}
+
+.horns {
+  margin: 2px;
+}
+
+.keyword {
+  margin: 2px;
+}
+
+.cool {
+  margin-top: 5px;
 }
