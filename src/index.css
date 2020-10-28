@@ -40,7 +40,7 @@ h1 {
 .each-unit {
   border: 1px solid black;
   width: 300px;
-  height: 400px;
+  height: 450px;
   border-radius: 20px;
   margin: 5px;
   display: flex;
